@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+             <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #a0aec0;
         }
-        /* Effet de perspective pour les cartes mémo */
+        /* Effets de perspective 3D pour les flashcards */
         .perspective-1000 {
             perspective: 1000px;
         }
@@ -75,7 +75,7 @@
             
             <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-medium border border-emerald-500/20 flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Collaboratif
+                Mode Collaboratif Actif
             </span>
             <div class="text-xs text-right hidden lg:block">
                 <span class="text-slate-400">Groupe d'Ingénierie :</span>
@@ -94,28 +94,28 @@
                     <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-4">Parcours Pédagogique</p>
                     <nav class="space-y-1" id="mainNav">
                         <button onclick="switchTab('dashboard')" id="nav-dashboard" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-150 bg-slate-800 text-white font-medium border-l-4 border-cesi-gold">
-                            <i class="fa-solid fa-industry w-5 text-cesi-gold"></i>
-                            <span>1. Cas d'étude VoltDrive</span>
+                            <i class="fa-solid fa-calendar-days w-5 text-cesi-gold"></i>
+                            <span>1. Agenda & Cas d'étude</span>
                         </button>
                         <button onclick="switchTab('theorie')" id="nav-theorie" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-left transition-all duration-150 border-l-4 border-transparent">
                             <i class="fa-solid fa-book-open w-5"></i>
                             <span>2. Support Théorique</span>
                         </button>
                         <button onclick="switchTab('jour1')" id="nav-jour1" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-left transition-all duration-150 border-l-4 border-transparent">
-                            <i class="fa-solid fa-calendar-day w-5"></i>
-                            <span>3. Jour 1 : Planification</span>
+                            <i class="fa-solid fa-compass w-5"></i>
+                            <span>3. Ateliers Jour 1</span>
                         </button>
                         <button onclick="switchTab('jour2')" id="nav-jour2" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-left transition-all duration-150 border-l-4 border-transparent">
                             <i class="fa-solid fa-gears w-5"></i>
-                            <span>4. Jour 2 : Résolution</span>
+                            <span>4. Ateliers Jour 2</span>
                         </button>
                         <button onclick="switchTab('simulation')" id="nav-simulation" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-left transition-all duration-150 border-l-4 border-transparent">
                             <i class="fa-solid fa-comments w-5"></i>
-                            <span>5. Simulation de Réunion</span>
+                            <span>5. Simulation de Crise</span>
                         </button>
                         <button onclick="switchTab('evaluation')" id="nav-evaluation" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-left transition-all duration-150 border-l-4 border-transparent">
                             <i class="fa-solid fa-graduation-cap w-5"></i>
-                            <span>6. Évaluation Module</span>
+                            <span>6. Évaluation Finale</span>
                         </button>
                     </nav>
                 </div>
@@ -123,10 +123,10 @@
                 <div class="pt-4 border-t border-slate-800">
                     <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Progression du projet</p>
                     <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div id="overallProgressBar" class="bg-gradient-to-r from-cesi-gold to-yellow-400 h-2 rounded-full transition-all duration-500" style="width: 12%"></div>
+                        <div id="overallProgressBar" class="bg-gradient-to-r from-cesi-gold to-yellow-400 h-2 rounded-full transition-all duration-500" style="width: 10%"></div>
                     </div>
                     <div class="flex justify-between items-center mt-2 text-xs">
-                        <span id="overallProgressText" class="text-slate-400">12% Complété</span>
+                        <span id="overallProgressText" class="text-slate-400">10% Complété</span>
                         <span class="text-cesi-gold font-bold">A2P2 CESI</span>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
         <!-- Zone d'affichage des contenus -->
         <main class="flex-1 p-6 lg:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
             
-            <!-- ONGLET 1: DESCRIPTION & CADRAGE DU PROJET -->
+            <!-- ONGLET 1: DESCRIPTION, AGENDA & CADRAGE DU PROJET -->
             <section id="tab-dashboard" class="space-y-8">
                 <div class="bg-gradient-to-r from-slate-900 to-cesi-dark text-white p-8 rounded-2xl shadow-xl border border-slate-800 relative overflow-hidden">
                     <div class="absolute right-0 top-0 h-full w-1/3 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cesi-gold via-transparent to-transparent"></div>
@@ -157,8 +157,78 @@
                         <span class="bg-cesi-gold text-cesi-dark font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Cadrage Pédagogique Actif</span>
                         <h2 class="text-3xl font-extrabold tracking-tight">Mission VoltDrive : Rétablir la performance industrielle</h2>
                         <p class="text-slate-300 text-base leading-relaxed font-light">
-                            Vous venez d'être nommés équipe projet d'amélioration continue pour l'usine **VoltDrive**, leader régional de la batterie pour vélos électriques de livraison. Face à la saturation du marché et à des anomalies répétées, votre mission est de réemployer les ressources existantes, éliminer les gaspillages (Muda) et réorganiser la ligne sans investissement lourd.
+                            Bienvenue dans le module **OPI101 - Gestion d'un Projet d'Amélioration**. Ce parcours de 2 jours (14 heures) alterne de la théorie active, des ateliers pratiques en équipe sur le cas de l'usine de batteries **VoltDrive**, et une validation finale des acquis.
                         </p>
+                    </div>
+                </div>
+
+                <!-- Programme Interactif des 2 Jours -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-nodes text-cesi-blue"></i>
+                        Planning alterné de la formation (2 Jours - 14 Heures)
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Jour 1 -->
+                        <div class="space-y-4">
+                            <h4 class="bg-cesi-blue text-white font-bold text-xs px-3 py-2 rounded-lg flex justify-between items-center">
+                                <span>JOUR 1 : Cadrage & Planification</span>
+                                <span class="bg-blue-800 px-2 py-0.5 rounded text-[10px]">7 Heures</span>
+                            </h4>
+                            <div class="border-l-2 border-cesi-blue/30 pl-4 ml-2 space-y-3 text-xs">
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-cesi-blue"></span>
+                                    <p class="font-bold text-slate-900">09h00 - 10h30 | Théorie : Lancement & Analyse des besoins</p>
+                                    <p class="text-slate-500 font-light">Comprendre le rôle du Sponsor, l'expression fonctionnelle du besoin (CdC).</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                    <p class="font-bold text-slate-900">10h30 - 12h30 | Atelier 1 : Définir l'équipe (Matrice RACI)</p>
+                                    <p class="text-slate-500 font-light font-medium text-cesi-blue">Pratique collaborative sur le cas d'étude VoltDrive.</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-cesi-blue"></span>
+                                    <p class="font-bold text-slate-900">14h00 - 15h30 | Théorie : Les outils de planification projet</p>
+                                    <p class="text-slate-500 font-light">Le WBS, le diagramme de Gantt, les chemins critiques et les jalons.</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                    <p class="font-bold text-slate-900">15h30 - 17h00 | Atelier 2 : Ordonnancement Gantt</p>
+                                    <p class="text-slate-500 font-light font-medium text-cesi-blue">Construction d'un chemin critique projet optimal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jour 2 -->
+                        <div class="space-y-4">
+                            <h4 class="bg-amber-500 text-white font-bold text-xs px-3 py-2 rounded-lg flex justify-between items-center">
+                                <span>JOUR 2 : Résolution & Pilotage des risques</span>
+                                <span class="bg-amber-600 px-2 py-0.5 rounded text-[10px]">7 Heures</span>
+                            </h4>
+                            <div class="border-l-2 border-amber-500/30 pl-4 ml-2 space-y-3 text-xs">
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                    <p class="font-bold text-slate-900">09h00 - 10h30 | Théorie : PDCA & Kaizen (Muda)</p>
+                                    <p class="text-slate-500 font-light">Les 4 phases de Deming, l'élimination des gaspillages sur le Gemba.</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                    <p class="font-bold text-slate-900">10h30 - 12h30 | Atelier 3 : Management visuel (PDCA)</p>
+                                    <p class="text-slate-500 font-light font-medium text-cesi-blue">Tri de tâches de l'usine dans la roue de Deming.</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                    <p class="font-bold text-slate-900">14h00 - 15h30 | Théorie : La méthode 8D & Risques</p>
+                                    <p class="text-slate-500 font-light">Le traitement des défaillances et la matrice de criticité (G &times; P).</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+                                    <p class="font-bold text-slate-900">15h30 - 17h00 | Simulation de crise & Évaluation</p>
+                                    <p class="text-slate-500 font-light font-medium text-cesi-blue">Jeu de rôle d'équipe face au Sponsor + Examen de validation.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -246,33 +316,33 @@
                             <h4 class="text-xl font-bold flex items-center text-slate-900 border-b pb-4">
                                 <i class="fa-solid fa-clipboard-check text-emerald-500 mr-2.5"></i> Vos livrables attendus
                             </h4>
-                            <div class="space-y-4 mt-4">
+                            <div class="space-y-4 mt-4 text-xs font-semibold">
                                 <div class="flex items-start space-x-3">
                                     <input type="checkbox" id="chk-raci" disabled class="mt-1 h-4 w-4 text-cesi-blue border-slate-300 rounded focus:ring-cesi-blue">
                                     <div>
-                                        <p class="font-semibold text-sm text-slate-800" id="txt-raci">Matrice RACI du projet</p>
-                                        <p class="text-xs text-slate-400">Jour 1 : À faire à l'Atelier Planification</p>
+                                        <p class="text-slate-800" id="txt-raci">Matrice RACI du projet</p>
+                                        <p class="text-[10px] text-slate-400 font-light">Jour 1 : À faire à l'Atelier Planification</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <input type="checkbox" id="chk-gantt" disabled class="mt-1 h-4 w-4 text-cesi-blue border-slate-300 rounded focus:ring-cesi-blue">
                                     <div>
-                                        <p class="font-semibold text-sm text-slate-800" id="txt-gantt">Ordonnancement Gantt</p>
-                                        <p class="text-xs text-slate-400">Jour 1 : À faire à l'Atelier Planification</p>
+                                        <p class="text-slate-800" id="txt-gantt">Ordonnancement Gantt</p>
+                                        <p class="text-[10px] text-slate-400 font-light">Jour 1 : À faire à l'Atelier Planification</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <input type="checkbox" id="chk-pdca" disabled class="mt-1 h-4 w-4 text-cesi-blue border-slate-300 rounded focus:ring-cesi-blue">
                                     <div>
-                                        <p class="font-semibold text-sm text-slate-800" id="txt-pdca">Actions de la Roue PDCA</p>
-                                        <p class="text-xs text-slate-400">Jour 2 : À faire à l'Atelier Résolution</p>
+                                        <p class="text-slate-800" id="txt-pdca">Actions de la Roue PDCA</p>
+                                        <p class="text-[10px] text-slate-400 font-light">Jour 2 : À faire à l'Atelier Résolution</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
                                     <input type="checkbox" id="chk-risks" disabled class="mt-1 h-4 w-4 text-cesi-blue border-slate-300 rounded focus:ring-cesi-blue">
                                     <div>
-                                        <p class="font-semibold text-sm text-slate-800" id="txt-risks">Matrice de Gestion des Risques</p>
-                                        <p class="text-xs text-slate-400">Jour 2 : À faire à l'Atelier Résolution</p>
+                                        <p class="text-slate-800" id="txt-risks">Matrice de Gestion des Risques</p>
+                                        <p class="text-[10px] text-slate-400 font-light">Jour 2 : À faire à l'Atelier Résolution</p>
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +364,7 @@
                 </div>
             </section>
 
-            <!-- ONGLET 2: SUPPORT THÉORIQUE INTERACTIF (FLASHCARDS) -->
+            <!-- ONGLET 2: SUPPORT THÉORIQUE INTERACTIF (FLASHCARDS ENRICHIES) -->
             <section id="tab-theorie" class="hidden space-y-8">
                 <div class="border-b pb-6">
                     <span class="bg-cesi-blue text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Les Fondamentaux de l'Amélioration Continue</span>
@@ -315,7 +385,7 @@
                                         <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Cadrage</span>
                                         <i class="fa-solid fa-users text-slate-400"></i>
                                     </div>
-                                    <h4 class="text-lg font-bold text-slate-900 mt-4">La Matrice RACI</h4>
+                                    <h4 class="text-base font-bold text-slate-900 mt-4">La Matrice RACI</h4>
                                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">
                                         Outil fondamental pour attribuer les rôles et éviter les conflits d'autorité sur un chantier d'amélioration.
                                     </p>
@@ -352,7 +422,7 @@
                                         <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Planification</span>
                                         <i class="fa-solid fa-chart-gantt text-slate-400"></i>
                                     </div>
-                                    <h4 class="text-lg font-bold text-slate-900 mt-4">Le Diagramme de Gantt</h4>
+                                    <h4 class="text-base font-bold text-slate-900 mt-4">Le Diagramme de Gantt</h4>
                                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">
                                         Permet de lier logiquement les jalons temporels d'un projet d'amélioration. Il matérialise le chemin critique.
                                     </p>
@@ -387,7 +457,7 @@
                                         <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Exécution</span>
                                         <i class="fa-solid fa-rotate text-slate-400"></i>
                                     </div>
-                                    <h4 class="text-lg font-bold text-slate-900 mt-4">La Roue du PDCA (Deming)</h4>
+                                    <h4 class="text-base font-bold text-slate-900 mt-4">La Roue du PDCA (Deming)</h4>
                                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">
                                         Moteur permanent de l'amélioration continue, structurant la mise en place d'actions solides :
                                     </p>
@@ -424,7 +494,7 @@
                                         <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Résolution</span>
                                         <i class="fa-solid fa-screwdriver-wrench text-slate-400"></i>
                                     </div>
-                                    <h4 class="text-lg font-bold text-slate-900 mt-4">La démarche 8D</h4>
+                                    <h4 class="text-base font-bold text-slate-900 mt-4">La démarche 8D</h4>
                                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">
                                         Méthode de résolution de crise d'origine automobile pour éradiquer définitivement les défaillances.
                                     </p>
@@ -458,7 +528,7 @@
                                         <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Philosophie Lean</span>
                                         <i class="fa-solid fa-bolt text-slate-400"></i>
                                     </div>
-                                    <h4 class="text-lg font-bold text-slate-900 mt-4">Hoshin & Kaizen</h4>
+                                    <h4 class="text-base font-bold text-slate-900 mt-4">Hoshin & Kaizen</h4>
                                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">
                                         **Hoshin Kanri :** Alignement stratégique global.<br>**Kaizen :** Amélioration continue participative par petits pas au quotidien.
                                     </p>
@@ -493,7 +563,7 @@
                                         <span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Maîtrise</span>
                                         <i class="fa-solid fa-shield-halved text-slate-400"></i>
                                     </div>
-                                    <h4 class="text-lg font-bold text-slate-900 mt-4">Analyse des Risques</h4>
+                                    <h4 class="text-base font-bold text-slate-900 mt-4">Analyse des Risques</h4>
                                     <p class="text-xs text-slate-500 mt-2 leading-relaxed">
                                         Anticiper les écueils avant d'arrêter une production. Mesure de la criticité :
                                     </p>
@@ -534,12 +604,12 @@
                 </div>
             </section>
 
-            <!-- ONGLET 3: JOUR 1 : INITIALISATION ET PLANIFICATION -->
+            <!-- ONGLET 3: ATELIERS JOUR 1 (PLANIFICATION & CADRAGE) -->
             <section id="tab-jour1" class="hidden space-y-10">
                 <div class="border-b pb-6">
-                    <span class="bg-cesi-blue text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Jour 1 - Phase Initiale</span>
-                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Atelier Cadrage et Planification du Projet</h2>
-                    <p class="text-slate-500 text-sm mt-1">Identifiez les rôles indispensables et organisez la chronologie de votre chantier de réorganisation.</p>
+                    <span class="bg-cesi-blue text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Ateliers de Planification - Jour 1</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Cadrage de l'équipe et Séquençage</h2>
+                    <p class="text-slate-500 text-sm mt-1">Évitez la dérive du projet VoltDrive en affectant correctement les rôles et en validant un planning réaliste.</p>
                 </div>
 
                 <!-- Activité 1: RACI Matrix -->
@@ -548,9 +618,9 @@
                         <div>
                             <h3 class="text-lg font-bold text-slate-900 flex items-center">
                                 <span class="bg-cesi-gold text-cesi-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2.5">1</span>
-                                Activité : Établir la Matrice RACI du Projet
+                                Atelier Collaboratif : Établir la Matrice RACI du Projet
                             </h3>
-                            <p class="text-xs text-slate-500 mt-1">Définissez précisément qui fait quoi. (R = Réalise, A = Approuve, C = Consulté, I = Informé)</p>
+                            <p class="text-xs text-slate-500 mt-1">Assignez les responsabilités stratégiques du projet d'amélioration. (R = Réalise, A = Approuve, C = Consulté, I = Informé)</p>
                         </div>
                         <button onclick="checkRaci()" class="bg-cesi-blue hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">
                             Valider la Matrice RACI
@@ -561,7 +631,7 @@
                         <table class="w-full text-sm text-left text-slate-500">
                             <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
                                 <tr>
-                                    <th scope="col" class="px-6 py-4 font-bold text-slate-800">Tâche / Responsabilité du projet VoltDrive</th>
+                                    <th scope="col" class="px-6 py-4 font-bold text-slate-800">Tâche / Livrable du projet VoltDrive</th>
                                     <th scope="col" class="px-6 py-4 text-center">Directeur d'Usine (Sponsor)</th>
                                     <th scope="col" class="px-6 py-4 text-center">Vous (Chef de projet AC)</th>
                                     <th scope="col" class="px-6 py-4 text-center">Expert Technique (Méthodes)</th>
@@ -570,1069 +640,4 @@
                             </thead>
                             <tbody class="divide-y divide-slate-200">
                                 <tr>
-                                    <td class="px-6 py-4 font-semibold text-slate-900">1. Valider le budget et l'atteinte des objectifs stratégiques</td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t1-c1" class="bg-slate-50 border border-slate-300 rounded p-1.5 focus:ring-cesi-gold focus:border-cesi-gold text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t1-c2" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t1-c3" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t1-c4" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 font-semibold text-slate-900">2. Établir le diagnostic de ligne, planifier et animer les réunions</td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t2-c1" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t2-c2" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t2-c3" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t2-c4" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 font-semibold text-slate-900">3. Apporter l'expertise technique sur la machine de soudure automatique</td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t3-c1" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t3-c2" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t3-c3" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t3-c4" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 font-semibold text-slate-900">4. Pratiquer quotidiennement le geste et alerter sur l'inconfort (ergonomie)</td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t4-c1" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t4-c2" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t4-c3" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <select id="raci-t4-c4" class="bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
-                                            <option value="">Sélectionner</option>
-                                            <option value="R">R (Réalise)</option>
-                                            <option value="A">A (Approuve)</option>
-                                            <option value="C">C (Consulté)</option>
-                                            <option value="I">I (Informé)</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="raci-feedback" class="p-4 rounded-lg hidden text-xs font-semibold"></div>
-                </div>
-
-                <!-- Activité 2: Gantt Planner -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 space-y-6">
-                    <div class="flex justify-between items-start flex-wrap gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 flex items-center">
-                                <span class="bg-cesi-gold text-cesi-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2.5">2</span>
-                                Activité : Chronologie et Gantt d'un Chantier d'Amélioration
-                            </h3>
-                            <p class="text-xs text-slate-500 mt-1">Ordonnez logiquement les tâches du projet (de la première à la dernière étape) pour maximiser les chances de succès.</p>
-                        </div>
-                        <button onclick="checkGantt()" class="bg-cesi-blue hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">
-                            Valider le Planning
-                        </button>
-                    </div>
-
-                    <!-- Liste interactive avec ordonnancement -->
-                    <div class="space-y-3" id="ganttTasksContainer">
-                        <div data-step="4" class="gantt-item bg-slate-50 hover:bg-slate-100 p-4 rounded-lg border border-slate-200 flex justify-between items-center cursor-pointer transition-all border-l-4 border-l-slate-400">
-                            <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-grip-vertical text-slate-400"></i>
-                                <span class="font-semibold text-slate-800 text-sm">4. Formation des opérateurs & Déploiement des nouveaux standards de câblage</span>
-                            </span>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-200 px-2.5 py-1 rounded">Cliquer pour sélectionner</span>
-                        </div>
-                        <div data-step="1" class="gantt-item bg-slate-50 hover:bg-slate-100 p-4 rounded-lg border border-slate-200 flex justify-between items-center cursor-pointer transition-all border-l-4 border-l-slate-400">
-                            <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-grip-vertical text-slate-400"></i>
-                                <span class="font-semibold text-slate-800 text-sm">1. Analyse de la situation actuelle & Cartographie du flux (VSD / VSM)</span>
-                            </span>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-200 px-2.5 py-1 rounded">Cliquer pour sélectionner</span>
-                        </div>
-                        <div data-step="3" class="gantt-item bg-slate-50 hover:bg-slate-100 p-4 rounded-lg border border-slate-200 flex justify-between items-center cursor-pointer transition-all border-l-4 border-l-slate-400">
-                            <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-grip-vertical text-slate-400"></i>
-                                <span class="font-semibold text-slate-800 text-sm">3. Conception du nouvel ilôt d'assemblage en maquette carton (3D Lean)</span>
-                            </span>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-200 px-2.5 py-1 rounded">Cliquer pour sélectionner</span>
-                        </div>
-                        <div data-step="2" class="gantt-item bg-slate-50 hover:bg-slate-100 p-4 rounded-lg border border-slate-200 flex justify-between items-center cursor-pointer transition-all border-l-4 border-l-slate-400">
-                            <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-grip-vertical text-slate-400"></i>
-                                <span class="font-semibold text-slate-800 text-sm">2. Chantier d'élimination des gaspillages (Muda) & Nettoyage initial 5S</span>
-                            </span>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-200 px-2.5 py-1 rounded">Cliquer pour sélectionner</span>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-end gap-2 text-xs">
-                        <button onclick="moveTaskUp()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1.5 rounded font-medium"><i class="fa-solid fa-arrow-up mr-1"></i> Monter la sélection</button>
-                        <button onclick="moveTaskDown()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1.5 rounded font-medium"><i class="fa-solid fa-arrow-down mr-1"></i> Descendre la sélection</button>
-                    </div>
-
-                    <div id="gantt-feedback" class="p-4 rounded-lg hidden text-xs font-semibold"></div>
-                </div>
-
-                <!-- Navigation de bas de page -->
-                <div class="flex justify-between items-center bg-slate-100 p-6 rounded-xl border border-slate-200">
-                    <p class="text-xs text-slate-500">Veillez à valider les deux activités avant de passer au Jour 2 pour que vos livrables soient enregistrés.</p>
-                    <button onclick="switchTab('jour2')" class="bg-cesi-blue hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-lg text-sm transition-colors">
-                        Aller au Jour 2 <i class="fa-solid fa-arrow-right ml-1.5"></i>
-                    </button>
-                </div>
-            </section>
-
-            <!-- ONGLET 4: JOUR 2 : EXÉCUTION ET CONTRÔLE -->
-            <section id="tab-jour2" class="hidden space-y-10">
-                <div class="border-b pb-6">
-                    <span class="bg-amber-500 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Jour 2 - Phase d'Exécution</span>
-                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Atelier Résolution de Problèmes & Management Visuel</h2>
-                    <p class="text-slate-500 text-sm mt-1">Gérer le quotidien de la ligne VoltDrive grâce aux démarches PDCA, Kaizen et à la mitigation des risques.</p>
-                </div>
-
-                <!-- Activité 3: The PDCA Wheel -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 space-y-6">
-                    <div class="flex justify-between items-start flex-wrap gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 flex items-center">
-                                <span class="bg-cesi-gold text-cesi-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2.5">3</span>
-                                Activité : Distribuer les cartes dans la Roue du PDCA
-                            </h3>
-                            <p class="text-xs text-slate-500 mt-1">Attribuez chaque action VoltDrive proposée au bon quadrant du cycle d'amélioration continue Deming.</p>
-                        </div>
-                        <button onclick="checkPdca()" class="bg-cesi-blue hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">
-                            Valider le PDCA
-                        </button>
-                    </div>
-
-                    <!-- Choix du PDCA par cartes réparties -->
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <!-- Card 1 -->
-                        <div class="border border-slate-200 p-4 rounded-lg bg-slate-50 flex flex-col justify-between shadow-sm">
-                            <p class="font-semibold text-xs text-slate-800">Standardiser le nouveau plan de câblage sur les postes de travail</p>
-                            <select id="pdca-card-1" class="mt-3 bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                <option value="">Choisir la phase...</option>
-                                <option value="P">Plan (Préparer)</option>
-                                <option value="D">Do (Faire)</option>
-                                <option value="C">Check (Vérifier)</option>
-                                <option value="A">Act (Ancrer / Agir)</option>
-                            </select>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="border border-slate-200 p-4 rounded-lg bg-slate-50 flex flex-col justify-between shadow-sm">
-                            <p class="font-semibold text-xs text-slate-800">Analyser les causes racines de la fissure de soudure (Ishikawa / 5 Pourquoi)</p>
-                            <select id="pdca-card-2" class="mt-3 bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                <option value="">Choisir la phase...</option>
-                                <option value="P">Plan (Préparer)</option>
-                                <option value="D">Do (Faire)</option>
-                                <option value="C">Check (Vérifier)</option>
-                                <option value="A">Act (Ancrer / Agir)</option>
-                            </select>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="border border-slate-200 p-4 rounded-lg bg-slate-50 flex flex-col justify-between shadow-sm">
-                            <p class="font-semibold text-xs text-slate-800">Suivre et comparer les taux de rebuts hebdomadaires (Indicateur Qualité)</p>
-                            <select id="pdca-card-3" class="mt-3 bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                <option value="">Choisir la phase...</option>
-                                <option value="P">Plan (Préparer)</option>
-                                <option value="D">Do (Faire)</option>
-                                <option value="C">Check (Vérifier)</option>
-                                <option value="A">Act (Ancrer / Agir)</option>
-                            </select>
-                        </div>
-                        <!-- Card 4 -->
-                        <div class="border border-slate-200 p-4 rounded-lg bg-slate-50 flex flex-col justify-between shadow-sm">
-                            <p class="font-semibold text-xs text-slate-800">Tester en production le prototype de gabarit de montage en carton</p>
-                            <select id="pdca-card-4" class="mt-3 bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                <option value="">Choisir la phase...</option>
-                                <option value="P">Plan (Préparer)</option>
-                                <option value="D">Do (Faire)</option>
-                                <option value="C">Check (Vérifier)</option>
-                                <option value="A">Act (Ancrer / Agir)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div id="pdca-feedback" class="p-4 rounded-lg hidden text-xs font-semibold"></div>
-                </div>
-
-                <!-- Activité 4: Risk Matrix -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 space-y-6">
-                    <div class="flex justify-between items-start flex-wrap gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 flex items-center">
-                                <span class="bg-cesi-gold text-cesi-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2.5">4</span>
-                                Activité : Évaluation et Actions face aux Risques Projet
-                            </h3>
-                            <p class="text-xs text-slate-500 mt-1">Mettez en place la stratégie optimale de mitigation pour chaque risque identifié sur VoltDrive.</p>
-                        </div>
-                        <button onclick="checkRisks()" class="bg-cesi-blue hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">
-                            Valider la Gestion des Risques
-                        </button>
-                    </div>
-
-                    <!-- Choix de criticité et d'actions correctives -->
-                    <div class="space-y-4">
-                        <!-- Risque 1 -->
-                        <div class="p-5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 shadow-sm">
-                            <div class="max-w-xl">
-                                <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Risque Humain</span>
-                                <p class="font-semibold text-slate-900 text-sm mt-1">Résistance au changement des opérateurs de ligne (habitude des anciens gestes)</p>
-                            </div>
-                            <div class="flex gap-3 w-full lg:w-auto">
-                                <div class="flex-1 lg:flex-none">
-                                    <label class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Criticité (G x P)</label>
-                                    <select id="risk-crit-1" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                        <option value="">Sélectionner...</option>
-                                        <option value="Faible">Faible (Zone Verte)</option>
-                                        <option value="Moyenne">Moyenne (Zone Jaune)</option>
-                                        <option value="Haute">Élevée (Zone Rouge)</option>
-                                    </select>
-                                </div>
-                                <div class="flex-1 lg:flex-none">
-                                    <label class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Stratégie de traitement</label>
-                                    <select id="risk-strat-1" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                        <option value="">Sélectionner...</option>
-                                        <option value="Eviter">Éviter le risque</option>
-                                        <option value="Reduire">Réduire (Co-construction / Kaizen)</option>
-                                        <option value="Accepter">Accepter le risque</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Risque 2 -->
-                        <div class="p-5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 shadow-sm">
-                            <div class="max-w-xl">
-                                <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Risque Approvisionnement</span>
-                                <p class="font-semibold text-slate-900 text-sm mt-1">Retard de livraison des nouveaux bacs de rangement standardisés 5S</p>
-                            </div>
-                            <div class="flex gap-3 w-full lg:w-auto">
-                                <div class="flex-1 lg:flex-none">
-                                    <label class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Criticité (G x P)</label>
-                                    <select id="risk-crit-2" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                        <option value="">Sélectionner...</option>
-                                        <option value="Faible">Faible (Zone Verte)</option>
-                                        <option value="Moyenne">Moyenne (Zone Jaune)</option>
-                                        <option value="Haute">Élevée (Zone Rouge)</option>
-                                    </select>
-                                </div>
-                                <div class="flex-1 lg:flex-none">
-                                    <label class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Stratégie de traitement</label>
-                                    <select id="risk-strat-2" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
-                                        <option value="">Sélectionner...</option>
-                                        <option value="Eviter">Éviter le risque</option>
-                                        <option value="Reduire">Réduire (Prêt de bacs provisoires)</option>
-                                        <option value="Accepter">Accepter le risque</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="risks-feedback" class="p-4 rounded-lg hidden text-xs font-semibold"></div>
-                </div>
-
-                <!-- Bas de page -->
-                <div class="flex justify-between items-center bg-slate-100 p-6 rounded-xl border border-slate-200">
-                    <p class="text-xs text-slate-500">Une fois les exercices du Jour 2 complétés, passez à la simulation collaborative.</p>
-                    <button onclick="switchTab('simulation')" class="bg-cesi-blue hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-lg text-sm transition-colors">
-                        Accéder à la Simulation d'Équipe <i class="fa-solid fa-arrow-right ml-1.5"></i>
-                    </button>
-                </div>
-            </section>
-
-            <!-- ONGLET 5: SIMULATION COLLABORATIVE (JEU DE RÔLE) -->
-            <section id="tab-simulation" class="hidden space-y-8">
-                <div class="border-b pb-6">
-                    <span class="bg-purple-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Atelier de Co-développement</span>
-                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Simulation Interactive : Réunion de Résolution de Crise</h2>
-                    <p class="text-slate-500 text-sm mt-1">Arbitrez des situations concrètes de blocages et gagnez l'adhésion de vos interlocuteurs.</p>
-                </div>
-
-                <!-- Bloc dialogue interactif -->
-                <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-950 text-white p-4 flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Scénario de Réunion : Le Sponsor est impatient</span>
-                        </div>
-                        <span class="text-xs text-cesi-gold font-bold">A2P2 - Cas Industriel</span>
-                    </div>
-
-                    <div class="p-8 space-y-6">
-                        <div class="space-y-4">
-                            <!-- Personnage 1 -->
-                            <div class="flex items-start space-x-3 max-w-2xl">
-                                <div class="w-10 h-10 rounded-full bg-slate-800 flex-shrink-0 flex items-center justify-center text-white font-bold border-2 border-slate-700">DU</div>
-                                <div class="bg-slate-100 p-4 rounded-r-xl rounded-bl-xl text-xs text-slate-700 leading-relaxed shadow-sm">
-                                    <p class="font-bold text-slate-900 mb-1">M. Lambert - Directeur d'Usine & Sponsor :</p>
-                                    « Écoutez l'équipe Projet, les arrêts de ligne me coûtent des milliers d'euros chaque jour. Je vois que vous passez beaucoup de temps à concevoir des matrices de risques et des plannings Gantt. Je veux des résultats concrets ! Pourquoi on ne change pas tout de suite la machine de soudure sans faire toutes ces études préalables ? »
-                                </div>
-                            </div>
-
-                            <!-- Personnage 2 -->
-                            <div class="flex items-start space-x-3 max-w-2xl ml-auto justify-end">
-                                <div class="bg-blue-50 p-4 rounded-l-xl rounded-br-xl text-xs text-slate-700 border border-blue-100 text-right leading-relaxed shadow-sm">
-                                    <p class="font-bold text-cesi-blue mb-1">Votre rôle de futur ingénieur CESI :</p>
-                                    Quelle réponse structurée de gestion de projet devez-vous apporter pour rassurer le sponsor tout en garantissant la rigueur de votre travail ?
-                                </div>
-                                <div class="w-10 h-10 rounded-full bg-cesi-blue flex-shrink-0 flex items-center justify-center text-white font-bold border-2 border-blue-400">CP</div>
-                            </div>
-                        </div>
-
-                        <!-- Choix de réponses -->
-                        <div class="space-y-3 pt-4 border-t" id="simulationChoicesContainer">
-                            <button onclick="selectSimChoice(1)" class="sim-choice-btn w-full p-4 rounded-xl border border-slate-200 hover:border-cesi-blue hover:bg-slate-50 text-left text-xs font-medium transition-all flex items-start gap-3 shadow-sm">
-                                <span class="w-5 h-5 rounded-full bg-slate-200 flex-shrink-0 flex items-center justify-center text-[10px] font-bold">A</span>
-                                <span>« Vous avez raison, nous allons commander immédiatement la nouvelle machine de soudure et annuler les ateliers de cartographie des flux pour gagner du temps. »</span>
-                            </button>
-                            <button onclick="selectSimChoice(2)" class="sim-choice-btn w-full p-4 rounded-xl border border-slate-200 hover:border-cesi-blue hover:bg-slate-50 text-left text-xs font-medium transition-all flex items-start gap-3 shadow-sm">
-                                <span class="w-5 h-5 rounded-full bg-slate-200 flex-shrink-0 flex items-center justify-center text-[10px] font-bold">B</span>
-                                <span>« M. Lambert, la méthodologie Kaizen nous montre que 80% des gaspillages viennent de l'organisation des flux et non des machines. Sans diagnostic, nous risquons de dépenser 50k€ pour une machine neuve sans résoudre le goulet réel d'approvisionnement des pièces. Le diagnostic Gantt nous sécurise en seulement 3 jours. »</span>
-                            </button>
-                            <button onclick="selectSimChoice(3)" class="sim-choice-btn w-full p-4 rounded-xl border border-slate-200 hover:border-cesi-blue hover:bg-slate-50 text-left text-xs font-medium transition-all flex items-start gap-3 shadow-sm">
-                                <span class="w-5 h-5 rounded-full bg-slate-200 flex-shrink-0 flex items-center justify-center text-[10px] font-bold">C</span>
-                                <span>« La planification est obligatoire selon les fiches pédagogiques du CESI. Si nous ne suivons pas les outils, nous ne pourrons pas valider notre rapport final, donc nous devons continuer ainsi. »</span>
-                            </button>
-                        </div>
-
-                        <div id="simulation-feedback" class="p-4 rounded-lg hidden text-xs font-semibold"></div>
-                    </div>
-                </div>
-
-                <div class="flex justify-end">
-                    <button onclick="switchTab('evaluation')" class="bg-cesi-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-sm transition-colors flex items-center gap-2">
-                        <span>Passer à l'Évaluation Individuelle</span>
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </button>
-                </div>
-            </section>
-
-            <!-- ONGLET 6: EVALUATION -->
-            <section id="tab-evaluation" class="hidden space-y-8">
-                <div class="border-b pb-6">
-                    <span class="bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase">Évaluation Finale Individuelle</span>
-                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Test de Validation des Compétences - OPI101</h2>
-                    <p class="text-slate-500 text-sm mt-1">Vérifiez vos acquis sur les méthodes d'amélioration continue et de gestion de projet (PDCA, RACI, 8D, Hoshin, Kaizen).</p>
-                </div>
-
-                <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center text-xs shadow-sm">
-                    <span class="text-slate-500">Question : <strong id="currentQuestionNum" class="text-slate-900">1 / 5</strong></span>
-                    <span class="text-slate-500">Score temporaire : <strong id="currentQuizScore" class="text-emerald-600">0%</strong></span>
-                </div>
-
-                <!-- Questionnaire -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200 space-y-6" id="quizCard">
-                    <div class="space-y-2">
-                        <span id="quizBadge" class="bg-slate-100 text-slate-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Thème du cours</span>
-                        <h3 id="quizQuestionText" class="text-base font-bold text-slate-900">Texte de la question</h3>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="quizOptionsContainer">
-                        <!-- Options chargées dynamiquement -->
-                    </div>
-
-                    <div id="quizFeedbackBox" class="p-4 rounded-lg hidden text-xs font-semibold"></div>
-
-                    <div class="flex justify-between items-center pt-4 border-t">
-                        <button id="quizHintBtn" onclick="showQuizHint()" class="text-slate-500 hover:text-slate-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                            <i class="fa-regular fa-lightbulb"></i> Obtenir un indice
-                        </button>
-                        <button id="quizNextBtn" onclick="nextQuizQuestion()" disabled class="bg-cesi-blue disabled:opacity-50 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg text-xs transition-all">
-                            Question Suivante <i class="fa-solid fa-arrow-right ml-1"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Ecran de réussite final -->
-                <div id="quizSummaryCard" class="bg-white p-8 rounded-xl shadow-md border border-slate-200 hidden text-center space-y-6">
-                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto shadow-sm">
-                        <i class="fa-solid fa-trophy animate-bounce"></i>
-                    </div>
-                    <div class="space-y-2">
-                        <h3 class="text-2xl font-bold text-slate-950">Félicitations, évaluation terminée !</h3>
-                        <p class="text-slate-500 text-sm">Votre score d'évaluation finale pour le module OPI101 a été calculé.</p>
-                        <p class="text-4xl font-black text-cesi-blue mt-4" id="finalScoreDisplay">100%</p>
-                    </div>
-
-                    <div class="pt-6 border-t flex flex-wrap gap-4 justify-center">
-                        <button onclick="exportProjetReport()" class="bg-cesi-gold hover:bg-yellow-400 text-cesi-dark font-bold py-3 px-6 rounded-lg text-xs transition-colors flex items-center gap-2 shadow-sm">
-                            <i class="fa-solid fa-file-pdf"></i> Exporter le Rapport de Projet
-                        </button>
-                        <button onclick="resetEvaluation()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-6 rounded-lg text-xs transition-colors shadow-sm">
-                            Recommencer le test
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-    <!-- Modale interactive de Guide Collaboration GitHub -->
-    <div id="githubModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 relative">
-            <button onclick="toggleGithubModal()" class="absolute right-4 top-4 text-slate-400 hover:text-slate-600">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            <div class="space-y-4">
-                <div class="flex items-center gap-3 text-cesi-blue">
-                    <i class="fa-brands fa-github text-3xl text-cesi-dark"></i>
-                    <h4 class="text-lg font-bold text-slate-900">Guide de Collaboration</h4>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    Ce cours est structuré en mode **A2P2** (Apprentissage Actif par Projet et Problème). En tant qu'apprenant ou enseignant, vous pouvez directement proposer des modifications sur ce support de cours.
-                </p>
-                <div class="space-y-2 text-xs">
-                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="font-bold text-slate-800 flex items-center gap-1.5"><span class="w-4 h-4 bg-cesi-gold text-cesi-dark font-bold rounded-full flex items-center justify-center text-[9px]">1</span> Forker le dépôt</p>
-                        <p class="text-slate-500 mt-1">Créez une copie de ce projet sur votre propre compte GitHub en cliquant sur le bouton **Fork**.</p>
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="font-bold text-slate-800 flex items-center gap-1.5"><span class="w-4 h-4 bg-cesi-gold text-cesi-dark font-bold rounded-full flex items-center justify-center text-[9px]">2</span> Modifier l'index.html</p>
-                        <p class="text-slate-500 mt-1">Ajoutez vos propres flashcards théoriques, modifiez le scénario ou enrichissez le quiz.</p>
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="font-bold text-slate-800 flex items-center gap-1.5"><span class="w-4 h-4 bg-cesi-gold text-cesi-dark font-bold rounded-full flex items-center justify-center text-[9px]">3</span> Pull Request (PR)</p>
-                        <p class="text-slate-500 mt-1">Proposez vos modifications pour qu'elles soient fusionnées sur le cours officiel après validation.</p>
-                    </div>
-                </div>
-                <div class="pt-2 flex justify-end gap-2">
-                    <button onclick="toggleGithubModal()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-4 rounded text-xs transition-colors">Fermer</button>
-                    <a href="https://github.com/aurorenicolas-lab/opi101-cours-interactif" target="_blank" class="bg-cesi-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs transition-colors inline-block text-center">Accéder au dépôt</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pied de page -->
-    <footer class="bg-slate-900 text-slate-500 py-4 px-6 text-center text-xs border-t border-slate-800 flex flex-wrap justify-between items-center gap-2">
-        <p>© 2026 CESI École d'Ingénieurs. Tous droits réservés.</p>
-        <p class="flex items-center gap-1.5"><i class="fa-solid fa-book text-cesi-gold"></i> Référence bibliographique principale : <span class="italic text-slate-400">La boîte à outils du Chef de Projet (Ed. 2025)</span></p>
-    </footer>
-
-    <!-- Logique et Interactions JavaScript -->
-    <script>
-        // Gestion de l'état global
-        const state = {
-            currentTab: 'dashboard',
-            teamName: 'Équipe Projet Alpha',
-            raciCompleted: false,
-            ganttCompleted: false,
-            pdcaCompleted: false,
-            risksCompleted: false,
-            simulationCompleted: false,
-            quizStep: 0,
-            quizScore: 0,
-            quizAnswersSelected: []
-        };
-
-        const targetGanttOrder = [1, 2, 3, 4]; // Ordre cible de la chronologie du projet
-
-        // Base de questions de l'évaluation
-        const quizQuestions = [
-            {
-                theme: "Introduction à la Gestion de Projet d'Amélioration",
-                question: "Selon la méthode Hoshin Kanri (alignement stratégique), quelle est la principale fonction du sponsor ?",
-                options: [
-                    "Valider et prioriser les objectifs de rupture (percées) et fournir les ressources nécessaires.",
-                    "Animer quotidiennement le chantier Kaizen au contact des opérateurs sur le terrain.",
-                    "Rédiger la documentation technique de chaque machine de l'usine.",
-                    "Remplacer le chef de projet en cas d'absence imprévue lors d'une réunion."
-                ],
-                correctIndex: 0,
-                hint: "Le sponsor a un rôle de haut niveau stratégique, il n'est pas censé animer le quotidien opérationnel de l'amélioration.",
-                rationale: "Le sponsor (souvent le directeur d'usine) valide les axes de rupture Hoshin et assure le déblocage politique et budgétaire du projet d'amélioration."
-            },
-            {
-                theme: "Le Cycle PDCA (Roue de Deming)",
-                question: "Dans quel quadrant de la Roue de Deming se situe l'action de 'Standardiser le nouveau plan de câblage' ?",
-                options: [
-                    "Phase 'Plan' : car cela nécessite de planifier de futures formations.",
-                    "Phase 'Check' : car cela permet d'auditer l'ancien mode de fonctionnement.",
-                    "Phase 'Act' : car la standardisation sécurise durablement le gain et évite le retour en arrière.",
-                    "Phase 'Do' : car les opérateurs exécutent de nouveaux mouvements de soudure."
-                ],
-                correctIndex: 2,
-                hint: "Pensez au coin de blocage de la roue de Deming qui empêche celle-ci de redescendre.",
-                rationale: "La standardisation appartient à la phase Act (Agir/Ancrer) pour figer les meilleures pratiques établies et validées par l'équipe."
-            },
-            {
-                theme: "La Démarche de Résolution de Problèmes 8D",
-                question: "Quelle étape de la méthode structurée 8D (Eight Disciplines) traite de la mise en place d'actions de confinement d'urgence ?",
-                options: [
-                    "D1 : Constitution de l'équipe d'intervention rapide.",
-                    "D3 : Définition des actions de sauvegarde provisoires.",
-                    "D5 : Choix des actions correctives permanentes.",
-                    "D8 : Félicitations collectives des équipes."
-                ],
-                correctIndex: 1,
-                hint: "Cette étape intervient immédiatement après la description du problème pour stopper la livraison de pièces défectueuses au client.",
-                rationale: "D3 est le confinement provisoire (actions de sauvegarde) visant à protéger le client final avant même de connaître les causes racines précises."
-            },
-            {
-                theme: "Outils de Cadrage (Matrice RACI)",
-                question: "Dans une matrice RACI, que se passe-t-il si une même tâche projet comporte deux personnes identifiées comme 'A' (Accountable / Approbateur) ?",
-                options: [
-                    "C'est une bonne pratique qui permet de partager la responsabilité financière.",
-                    "C'est une anomalie majeure : un seul et unique approbateur doit être imputable de la réussite de la tâche pour éviter la dilution des responsabilités.",
-                    "Cela signifie que la tâche est deux fois plus importante et nécessite un budget doublé.",
-                    "La matrice est automatiquement requalifiée en méthode Kaizen."
-                ],
-                correctIndex: 1,
-                hint: "Si tout le monde est responsable final, alors personne ne l'est vraiment.",
-                rationale: "La règle fondamentale du RACI impose un unique 'A' par ligne pour éviter les conflits et assurer une imputabilité claire."
-            },
-            {
-                theme: "Gestion des Risques Industriels",
-                question: "Comment définit-on la criticité d'un risque identifié au sein d'un atelier d'assemblage ?",
-                options: [
-                    "Criticité = Coût d'achat de la machine x Nombre d'heures de formation des opérateurs.",
-                    "Criticité = Gravité de l'impact potentiel (G) x Probabilité d'occurrence (P).",
-                    "Criticité = Taux de rebut quotidien de l'usine multiplié par l'âge moyen des opérateurs.",
-                    "Criticité = Niveau hiérarchique de la personne qui a découvert le problème sur le terrain."
-                ],
-                correctIndex: 1,
-                hint: "Il s'agit du croisement entre l'effet dévastateur d'un événement et sa chance de se produire.",
-                rationale: "La criticité découle du produit de la gravité de la défaillance et de sa probabilité d'apparition estimée, souvent notée sur une échelle de 1 à 5."
-            }
-        ];
-
-        // Initialisation globale
-        window.onload = function() {
-            document.getElementById('teamNameInput').addEventListener('input', function(e) {
-                state.teamName = e.target.value;
-            });
-            updateOverallProgress();
-            renderGanttTasks();
-        };
-
-        // Modale d'aide de GitHub
-        function toggleGithubModal() {
-            const modal = document.getElementById('githubModal');
-            modal.classList.toggle('hidden');
-        }
-
-        // Système de bascule d'onglets
-        function switchTab(tabId) {
-            document.getElementById('tab-dashboard').classList.add('hidden');
-            document.getElementById('tab-theorie').classList.add('hidden');
-            document.getElementById('tab-jour1').classList.add('hidden');
-            document.getElementById('tab-jour2').classList.add('hidden');
-            document.getElementById('tab-simulation').classList.add('hidden');
-            document.getElementById('tab-evaluation').classList.add('hidden');
-
-            const navButtons = document.getElementById('mainNav').children;
-            for (let btn of navButtons) {
-                btn.classList.remove('bg-slate-800', 'text-white', 'border-cesi-gold', 'font-medium');
-                btn.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-slate-800', 'border-transparent');
-            }
-
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
-            state.currentTab = tabId;
-
-            const activeBtn = document.getElementById('nav-' + tabId);
-            if (activeBtn) {
-                activeBtn.classList.add('bg-slate-800', 'text-white', 'border-cesi-gold', 'font-medium');
-                activeBtn.classList.remove('text-slate-400', 'border-transparent');
-            }
-
-            if (tabId === 'evaluation') {
-                loadQuizQuestion();
-            }
-
-            updateOverallProgress();
-            window.scrollTo(0,0);
-        }
-
-        // Calcul de progression globale
-        function updateOverallProgress() {
-            let points = 0;
-            if (state.raciCompleted) points += 20;
-            if (state.ganttCompleted) points += 20;
-            if (state.pdcaCompleted) points += 20;
-            if (state.risksCompleted) points += 20;
-            if (state.simulationCompleted) points += 20;
-
-            const progressBar = document.getElementById('overallProgressBar');
-            const progressText = document.getElementById('overallProgressText');
-            
-            progressBar.style.width = points + '%';
-            progressText.innerText = points + '% Complété';
-
-            document.getElementById('chk-raci').checked = state.raciCompleted;
-            document.getElementById('chk-gantt').checked = state.ganttCompleted;
-            document.getElementById('chk-pdca').checked = state.pdcaCompleted;
-            document.getElementById('chk-risks').checked = state.risksCompleted;
-
-            toggleTextStrike('txt-raci', state.raciCompleted);
-            toggleTextStrike('txt-gantt', state.ganttCompleted);
-            toggleTextStrike('txt-pdca', state.pdcaCompleted);
-            toggleTextStrike('txt-risks', state.risksCompleted);
-        }
-
-        function toggleTextStrike(elementId, status) {
-            const el = document.getElementById(elementId);
-            if (status) {
-                el.classList.add('line-through', 'text-slate-400');
-            } else {
-                el.classList.remove('line-through', 'text-slate-400');
-            }
-        }
-
-        // VALIDATION ATELIER 1: RACI
-        function checkRaci() {
-            const t1c1 = document.getElementById('raci-t1-c1').value; // DU
-            const t1c2 = document.getElementById('raci-t1-c2').value; // CP
-            const t1c3 = document.getElementById('raci-t1-c3').value; // Expert
-            const t1c4 = document.getElementById('raci-t1-c4').value; // Opérateur
-
-            const t2c1 = document.getElementById('raci-t2-c1').value;
-            const t2c2 = document.getElementById('raci-t2-c2').value;
-            const t2c3 = document.getElementById('raci-t2-c3').value;
-            const t2c4 = document.getElementById('raci-t2-c4').value;
-
-            let isCorrect = true;
-            if (t1c1 !== 'A') isCorrect = false; 
-            if (t2c2 !== 'R') isCorrect = false; 
-
-            const feedback = document.getElementById('raci-feedback');
-            feedback.classList.remove('hidden');
-
-            if (isCorrect) {
-                feedback.innerHTML = `<p class="text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 mt-3 text-xs">
-                    <i class="fa-solid fa-check-double mr-1.5"></i> **Félicitations !** Votre matrice RACI est juste. Le Directeur d'usine est bien l'Approbateur unique (A) des budgets, tandis que vous pilotez et réalisez (R) l'animation globale du chantier d'amélioration.
-                </p>`;
-                state.raciCompleted = true;
-            } else {
-                feedback.innerHTML = `<p class="text-red-700 bg-red-50 p-3 rounded-lg border border-red-200 mt-3 text-xs">
-                    <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> **Inexactitude identifiée.** Attention : Le Directeur d'Usine doit être l'unique décisionnaire final pour les budgets (A). Vérifiez également que vous (Chef de Projet AC) réalisez (R) l'animation de l'atelier d'amélioration. Réessayez !
-                </p>`;
-            }
-            updateOverallProgress();
-        }
-
-        // VALIDATION ATELIER 2: GANTT (Reorder)
-        let selectedGanttIndex = null;
-
-        function renderGanttTasks() {
-            const container = document.getElementById('ganttTasksContainer');
-            const items = Array.from(container.children);
-            items.forEach((item, index) => {
-                item.onclick = () => selectGanttItem(index);
-            });
-        }
-
-        function selectGanttItem(index) {
-            const container = document.getElementById('ganttTasksContainer');
-            const items = Array.from(container.children);
-            items.forEach((item, idx) => {
-                if (idx === index) {
-                    item.classList.add('border-cesi-gold', 'bg-yellow-50', 'ring-2', 'ring-cesi-gold/30');
-                    selectedGanttIndex = index;
-                } else {
-                    item.classList.remove('border-cesi-gold', 'bg-yellow-50', 'ring-2', 'ring-cesi-gold/30');
-                }
-            });
-        }
-
-        function moveTaskUp() {
-            if (selectedGanttIndex === null || selectedGanttIndex === 0) return;
-            const container = document.getElementById('ganttTasksContainer');
-            const items = Array.from(container.children);
-            container.insertBefore(items[selectedGanttIndex], items[selectedGanttIndex - 1]);
-            selectedGanttIndex--;
-            selectGanttItem(selectedGanttIndex);
-        }
-
-        function moveTaskDown() {
-            const container = document.getElementById('ganttTasksContainer');
-            const items = Array.from(container.children);
-            if (selectedGanttIndex === null || selectedGanttIndex === items.length - 1) return;
-            container.insertBefore(items[selectedGanttIndex + 1], items[selectedGanttIndex]);
-            selectedGanttIndex++;
-            selectGanttItem(selectedGanttIndex);
-        }
-
-        function checkGantt() {
-            const container = document.getElementById('ganttTasksContainer');
-            const items = Array.from(container.children);
-            const currentOrder = items.map(item => parseInt(item.getAttribute('data-step')));
-
-            let isCorrect = true;
-            for (let i = 0; i < currentOrder.length; i++) {
-                if (currentOrder[i] !== targetGanttOrder[i]) {
-                    isCorrect = false;
-                    break;
-                }
-            }
-
-            const feedback = document.getElementById('gantt-feedback');
-            feedback.classList.remove('hidden');
-
-            if (isCorrect) {
-                feedback.innerHTML = `<p class="text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-xs mt-3">
-                    <i class="fa-solid fa-square-check mr-1.5"></i> **Parfait !** La séquence de votre projet d'amélioration est optimisée : 
-                    1. Cartographie (VSD) -> 2. Élimination des Muda -> 3. Co-conception (Maquette 3D carton) -> 4. Standardisation & Formations.
-                </p>`;
-                state.ganttCompleted = true;
-            } else {
-                feedback.innerHTML = `<p class="text-red-700 bg-red-50 p-3 rounded-lg border border-red-200 text-xs mt-3">
-                    <i class="fa-solid fa-arrow-rotate-left mr-1.5"></i> **Chronologie incohérente.** Vous ne pouvez pas former les équipes (Standardisation) avant d'avoir cartographié le flux ou conçu l'implantation physique. Veuillez ajuster l'ordre des tâches.
-                </p>`;
-            }
-            updateOverallProgress();
-        }
-
-        // VALIDATION ATELIER 3: PDCA
-        function checkPdca() {
-            const c1 = document.getElementById('pdca-card-1').value; // Standardiser
-            const c2 = document.getElementById('pdca-card-2').value; // Analyser causes
-            const c3 = document.getElementById('pdca-card-3').value; // Suivre rebuts
-            const c4 = document.getElementById('pdca-card-4').value; // Tester proto
-
-            const feedback = document.getElementById('pdca-feedback');
-            feedback.classList.remove('hidden');
-
-            if (c1 === 'A' && c2 === 'P' && c3 === 'C' && c4 === 'D') {
-                feedback.innerHTML = `<p class="text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-xs mt-3">
-                    <i class="fa-solid fa-circle-check mr-1.5"></i> **Excellent travail !** Vos attributions sont exactes :
-                    - Analyser (Ishikawa) = **Plan**
-                    - Tester le prototype carton = **Do**
-                    - Suivre l'indicateur de rebut = **Check**
-                    - Standardiser la fiche d'instruction = **Act**
-                </p>`;
-                state.pdcaCompleted = true;
-            } else {
-                feedback.innerHTML = `<p class="text-red-700 bg-red-50 p-3 rounded-lg border border-red-200 text-xs mt-3">
-                    <i class="fa-solid fa-circle-exclamation mr-1.5"></i> **Écarts repérés dans votre PDCA.** N'oubliez pas que l'analyse des causes fondamentales se fait impérativement avant d'agir (Plan), et que la standardisation pérenne ferme la marche pour sécuriser le gain (Act). Ajustez vos choix !
-                </p>`;
-            }
-            updateOverallProgress();
-        }
-
-        // VALIDATION ATELIER 4: RISQUES ET STRATÉGIES
-        function checkRisks() {
-            const crit1 = document.getElementById('risk-crit-1').value;
-            const strat1 = document.getElementById('risk-strat-1').value;
-            const crit2 = document.getElementById('risk-crit-2').value;
-            const strat2 = document.getElementById('risk-strat-2').value;
-
-            const feedback = document.getElementById('risks-feedback');
-            feedback.classList.remove('hidden');
-
-            if (strat1 === 'Reduire' && strat2 === 'Reduire' && crit1 !== "" && crit2 !== "") {
-                feedback.innerHTML = `<p class="text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-xs mt-3">
-                    <i class="fa-solid fa-shield-halved mr-1.5"></i> **Gestion des risques validée !** Pour lutter contre la résistance au changement, co-construire la solution avec les opérateurs en atelier (méthode Kaizen participative) est la meilleure parade pour réduire le risque.
-                </p>`;
-                state.risksCompleted = true;
-            } else {
-                feedback.innerHTML = `<p class="text-red-700 bg-red-50 p-3 rounded-lg border border-red-200 text-xs mt-3">
-                    <i class="fa-solid fa-circle-xmark mr-1.5"></i> **Stratégies de traitement perfectibles.** Accepter passivement la résistance des opérateurs risquerait d'entraîner l'échec total de votre nouveau standard ergonomique. Pensez à l'impact des chantiers participatifs.
-                </p>`;
-            }
-            updateOverallProgress();
-        }
-
-        // VALIDATION ATELIER 5: JEU DE RÔLE SIMULÉ
-        function selectSimChoice(choiceId) {
-            const feedback = document.getElementById('simulation-feedback');
-            feedback.classList.remove('hidden');
-
-            const btns = document.querySelectorAll('.sim-choice-btn');
-            btns.forEach((btn, idx) => {
-                btn.classList.remove('border-cesi-gold', 'bg-yellow-50');
-            });
-
-            if (choiceId === 1) {
-                feedback.innerHTML = `<p class="text-red-700 bg-red-50 p-4 rounded-lg border border-red-200 text-xs mt-3">
-                    <i class="fa-solid fa-circle-xmark mr-1.5"></i> **Erreur de stratégie.** En cédant immédiatement à la pression, vous risquez de gaspiller d'importantes ressources financières pour un résultat stérile. Un ingénieur doit s'appuyer sur des données probantes (fact-based management).
-                </p>`;
-            } else if (choiceId === 2) {
-                feedback.innerHTML = `<p class="text-emerald-700 bg-emerald-50 p-4 rounded-lg border border-emerald-200 text-xs mt-3">
-                    <i class="fa-solid fa-circle-check mr-1.5"></i> **Excellente posture d'ingénieur !** Vous avez démontré de façon rationnelle au Sponsor l'intérêt de la démarche Lean (Muda) et l'importance de l'analyse préalable. Vous avez conservé son soutien tout en sécurisant votre méthodologie d'action.
-                </p>`;
-                state.simulationCompleted = true;
-            } else {
-                feedback.innerHTML = `<p class="text-amber-700 bg-amber-50 p-4 rounded-lg border border-amber-200 text-xs mt-3">
-                    <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> **Argumentation faible.** Justifier vos actions uniquement par des obligations académiques n'intéresse pas un directeur d'usine confronté à des pertes réelles. Vous devez lui parler en termes de retour sur investissement (ROI) et d'efficacité industrielle.
-                </p>`;
-            }
-            updateOverallProgress();
-        }
-
-        // VALIDATION EVALUATION FINALE (SYSTEME DE QUESTIONNAIRE)
-        function loadQuizQuestion() {
-            const q = quizQuestions[state.quizStep];
-            document.getElementById('currentQuestionNum').innerText = `${state.quizStep + 1} / ${quizQuestions.length}`;
-            document.getElementById('quizBadge').innerText = q.theme;
-            document.getElementById('quizQuestionText').innerText = q.question;
-
-            const container = document.getElementById('quizOptionsContainer');
-            container.innerHTML = '';
-            document.getElementById('quizFeedbackBox').classList.add('hidden');
-            document.getElementById('quizNextBtn').disabled = true;
-
-            q.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = "quiz-opt-btn w-full p-4 rounded-xl border border-slate-200 hover:border-cesi-blue hover:bg-slate-50 text-left text-xs font-semibold transition-all flex items-center justify-between shadow-sm";
-                btn.innerHTML = `
-                    <span>${opt}</span>
-                    <i class="fa-regular fa-circle text-slate-300 flex-shrink-0 ml-2"></i>
-                `;
-                btn.onclick = () => selectQuizOption(idx);
-                container.appendChild(btn);
-            });
-        }
-
-        function selectQuizOption(optionIdx) {
-            const q = quizQuestions[state.quizStep];
-            const isCorrect = optionIdx === q.correctIndex;
-
-            const btns = document.querySelectorAll('.quiz-opt-btn');
-            btns.forEach((btn, idx) => {
-                btn.disabled = true;
-                if (idx === q.correctIndex) {
-                    btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
-                    btn.querySelector('i').className = "fa-solid fa-circle-check text-emerald-500";
-                } else if (idx === optionIdx) {
-                    btn.classList.add('bg-red-50', 'border-red-500', 'text-red-900');
-                    btn.querySelector('i').className = "fa-solid fa-circle-xmark text-red-500";
-                }
-            });
-
-            const feedbackBox = document.getElementById('quizFeedbackBox');
-            feedbackBox.classList.remove('hidden');
-
-            if (isCorrect) {
-                feedbackBox.innerHTML = `<p class="text-emerald-700 bg-emerald-50/50 p-3 rounded-lg border border-emerald-200 text-xs font-medium">
-                    <i class="fa-solid fa-face-smile mr-1.5"></i> **Correct !** ${q.rationale}
-                </p>`;
-                if (!state.quizAnswersSelected[state.quizStep]) {
-                    state.quizScore++;
-                    state.quizAnswersSelected[state.quizStep] = true;
-                }
-            } else {
-                feedbackBox.innerHTML = `<p class="text-red-700 bg-red-50/50 p-3 rounded-lg border border-red-200 text-xs font-medium">
-                    <i class="fa-solid fa-face-frown mr-1.5"></i> **Incorrect.** ${q.rationale}
-                </p>`;
-                state.quizAnswersSelected[state.quizStep] = false;
-            }
-
-            const tempScore = Math.round((state.quizScore / (state.quizStep + 1)) * 100);
-            document.getElementById('currentQuizScore').innerText = `${tempScore}%`;
-
-            document.getElementById('quizNextBtn').disabled = false;
-        }
-
-        function showQuizHint() {
-            const q = quizQuestions[state.quizStep];
-            const feedbackBox = document.getElementById('quizFeedbackBox');
-            feedbackBox.classList.remove('hidden');
-            feedbackBox.innerHTML = `<p class="text-slate-700 bg-amber-50 p-3 rounded-lg border border-amber-200 text-xs font-semibold">
-                <i class="fa-regular fa-lightbulb text-amber-500 mr-1.5 animate-bounce"></i> **Indice :** ${q.hint}
-            </p>`;
-        }
-
-        function nextQuizQuestion() {
-            if (state.quizStep < quizQuestions.length - 1) {
-                state.quizStep++;
-                loadQuizQuestion();
-            } else {
-                document.getElementById('quizCard').classList.add('hidden');
-                document.getElementById('quizSummaryCard').classList.remove('hidden');
-                const finalPercentage = Math.round((state.quizScore / quizQuestions.length) * 100);
-                document.getElementById('finalScoreDisplay').innerText = `${finalPercentage}%`;
-                
-                if (finalPercentage >= 80) {
-                    document.getElementById('finalScoreDisplay').className = "text-5xl font-black text-emerald-600 animate-bounce mt-4";
-                }
-            }
-        }
-
-        function resetEvaluation() {
-            state.quizStep = 0;
-            state.quizScore = 0;
-            state.quizAnswersSelected = [];
-            document.getElementById('currentQuizScore').innerText = "0%";
-            document.getElementById('quizSummaryCard').classList.add('hidden');
-            document.getElementById('quizCard').classList.remove('hidden');
-            loadQuizQuestion();
-        }
-
-        // Exporter le rapport au format fichier texte autonome
-        function exportProjetReport() {
-            const content = `===========================================================
-RAPPORT DE PROJET D'AMÉLIORATION INDUSTRIELLE - OPI101
-CESI École d'Ingénieurs - Mode Collaboratif A2P2
-===========================================================
-Groupe de travail : ${state.teamName}
-Projet : Réorganisation ligne d'assemblage VoltDrive
-Date : ${new Date().toLocaleDateString('fr-FR')}
-
------------------------------------------------------------
-1. DIAGNOSTIC INITIAL (SITUATION DU CHANTIER)
------------------------------------------------------------
-* Taux de rebut initial constaté : 12%
-* Anomalies majeures relevées : Croisement des flux opérateurs,
-  ruptures de pièces, absence d'instructions de montage standard.
-* Sponsor identifié : Directeur d'Usine (M. Lambert)
-
------------------------------------------------------------
-2. CADRAGE ET RESPONSABILITÉS PROJET (RACI)
------------------------------------------------------------
-* Matrice RACI complétée avec succès.
-* Responsable budgétaire (A) : Directeur d'Usine
-* Responsable opérationnel du projet (R) : Équipe Projet AC
-
------------------------------------------------------------
-3. CHRONOLOGIE DU CHANTIER D'AMÉLIORATION (GANTT)
------------------------------------------------------------
-Ordre d'exécution optimisé des phases validé :
-1. Diagnostic de ligne & VSD (Value Stream Design)
-2. Chantier d'élimination des gaspillages (Muda) & 5S
-3. Co-conception ergonomique du nouvel îlot (3D carton)
-4. Formation des opérateurs & Déploiement des standards
-
------------------------------------------------------------
-4. MANAGEMENT VISUEL ET EXÉCUTION DU PROGRES (PDCA)
------------------------------------------------------------
-* Plan (Préparer) : Analyse de causes (Ishikawa)
-* Do (Faire) : Prototype d'implantation physique
-* Check (Vérifier) : Suivi statistique des rebuts
-* Act (Ancrer) : Déploiement des standards visuels de câblage
-
------------------------------------------------------------
-5. RÉSULTAT DE L'ÉVALUATION FINALE INDIVIDUELLE
------------------------------------------------------------
-* Score de validation théorique global : ${Math.round((state.quizScore / quizQuestions.length) * 100)}%
-
-===========================================================
-Rapport généré automatiquement par le Portail Interactif CESI.
-===========================================================`;
-
-            const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = `Rapport_Projet_OPI101_${state.teamName.replace(/\s+/g, '_')}.txt`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
-</body>
-</html>
+                                    <td class="px-6 py-4 font-semibold text-slate-900 text-xs">1. Valider le budget global de ré
